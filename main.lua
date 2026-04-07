@@ -3,7 +3,7 @@ local selected_or_hovered = ya.sync(function()
 	for _, u in pairs(cx.yanked) do
 		table.insert(paths, tostring(u))
 	end
-	if #paths == 0 and tab.current.hovered then
+	if #paths == 0 and ctx.active.current.hovered then
 		paths[1] = tostring(tab.current.hovered.url)
 	end
 	return paths
