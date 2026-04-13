@@ -8,6 +8,9 @@ local selected_or_hovered = ya.sync(function()
 			table.insert(paths, tostring(url))
 		end
 	end
+	if #paths == 0 and tab.current.hovered then
+		table.insert(paths, tostring(tab.current.hovered.url))
+	end
 	return paths
 end)
 
